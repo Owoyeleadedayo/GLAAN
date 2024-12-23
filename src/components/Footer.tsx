@@ -24,7 +24,7 @@ const Footer = () => {
       >
         <Flex
           width={"100%"}
-          px={{ base: "20px", md: "20px", lg: "100px" }}
+          px={{ base: "30px", md: "25px", lg: "100px" }}
           justifyContent={"space-between"}
           alignItems={"center"}
           direction={{ base: "column", md: "row" }}

@@ -1,6 +1,9 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PP from "../../assets/Images/pro.png"
+import EDU from "../../assets/Images/educate.png";
+import Collab from "../../assets/Images/collab.png";
+import FIN from "../../assets/Images/financial.png";
 
 const Programs = () => {
     const prog = [
@@ -10,17 +13,17 @@ const Programs = () => {
         text: "Empowering Our Communities through Action",
       },
       {
-        Image: PP,
+        Image: EDU,
         title: "Educational Programs",
         text: "Enhancing mutual understanding through education and storytelling.",
       },
       {
-        Image: PP,
+        Image: Collab,
         title: "Collaborative Investments",
         text: "Building wealth through cooperative investments and entrepreneurship.",
       },
       {
-        Image: PP,
+        Image: FIN,
         title: "Financial Literacy Workshops",
         text: "Empowering our community with the knowledge to achieve economic freedom.",
       },
