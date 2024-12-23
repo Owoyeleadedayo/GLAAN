@@ -10,6 +10,7 @@ const BePart = () => {
         justifyContent={"center"}
         alignItems={"center"}
         py={{ base: "180px", md: "150px", lg: '150px', xl:"100px" }}
+        px={'20px'}
         direction={"column"}
         gap={"20px"}
       >
