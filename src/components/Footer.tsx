@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Image, Input, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Input, Text } from "@chakra-ui/react";
 import Logo from "../assets/Images/glaanLogo.png";
 import { MdFacebook } from "react-icons/md";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -56,7 +56,7 @@ const Footer = () => {
                   <Text
                     fontFamily={"Poppins"}
                     fontSize={"14px"}
-                    fontWeight={500}
+                    fontWeight={300}
                     color={"#FFFFFF"}
                   >
                     {item.name}
@@ -89,19 +89,20 @@ const Footer = () => {
                   fontFamily="Poppins"
                   fontSize="14px"
                   fontWeight={500}
-                  color="#FFFFFF"
-                  bgColor="#000000"
+                  color="#000000"
+                  bgColor="#FFFFFF"
                   border="1px solid #FFFFFF"
+                  borderRightRadius={"8px"}
                   paddingRight="100px"
                 />
 
                 <Flex
                   border="1px solid red"
                   px="12px"
-                  py="6px"
+                  py="8px"
                   borderRadius="8px"
                   position="absolute"
-                  right="5px"
+                  right="0px"
                   top="50%"
                   transform="translateY(-50%)"
                   bgColor="#FF3D00"
@@ -132,12 +133,12 @@ const Footer = () => {
           </Flex>
         </Flex>
         <Flex justifyContent={"center"} alignItems={"center"}>
-          <Divider
-            orientation="horizontal"
-            border={"1px solid #FFFFFF"}
-            mt={"30px"}
-            mb={'15px'}
-            width={"100%"}
+          <Box
+            mt="30px"
+            mb="10px"
+            width="100%"
+            height="0.1px"
+            bgColor="#FFFFFF"
           />
         </Flex>
         <Flex
@@ -158,7 +159,7 @@ const Footer = () => {
               © 2024 GLAAN. All rights reserved.
             </Text>
           </Flex>
-          <Flex gap={"30px"} mr={{base: 0, md: "35px"}}>
+          <Flex gap={"30px"} mr={{ base: 0, md: "35px" }}>
             <Flex>
               <Text
                 fontFamily={"Poppins"}

@@ -12,7 +12,8 @@ const Tag = () => {
       justifyContent="space-between"
       alignItems="center"
       overflow="hidden"
-      position="relative"
+      position="sticky"
+      top={'0px'}
     >
       <MotionFlex
         display="inline-flex"

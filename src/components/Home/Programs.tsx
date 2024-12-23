@@ -32,7 +32,8 @@ const Programs = () => {
         height={"100%"}
         justifyContent={"center"}
         alignItems={"center"}
-        py={"50px"}
+        pt={{ base: "30px", md: "50px", lg: "50px", xl: "50px" }}
+        pb={{base: "100px", }}
         direction={"column"}
         gap={{ base: "20px", md: "30px", lg: "35px", xl: "40px" }}
       >
@@ -118,9 +119,9 @@ const Programs = () => {
                   </Text>
                 </Flex>
                 <motion.div
-                //   initial={{ opacity: 0 }}
-                //   whileHover={{ opacity: 1 }}
-                //   transition={{ duration: 0.3 }}
+                  //   initial={{ opacity: 0 }}
+                  //   whileHover={{ opacity: 1 }}
+                  //   transition={{ duration: 0.3 }}
                   style={{
                     position: "absolute",
                     bottom: "20px",
@@ -128,11 +129,7 @@ const Programs = () => {
                     transform: "translateX(-50%)",
                   }}
                 >
-                  <Button
-                    variant={"none"}
-                    bg={"#FF3D00"}
-                    color={"#FFFFFF"}
-                  >
+                  <Button variant={"none"} bg={"#FF3D00"} color={"#FFFFFF"}>
                     Explore
                   </Button>
                 </motion.div>

@@ -9,7 +9,7 @@ const BePart = () => {
         bgColor={"#E0E0E0"}
         justifyContent={"center"}
         alignItems={"center"}
-        p={"30px"}
+        py={{ base: "180px", md: "150px", lg: '150px', xl:"100px" }}
         direction={"column"}
         gap={"20px"}
       >

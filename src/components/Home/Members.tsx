@@ -1,4 +1,11 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import MMM from "../../assets/Images/Ellipse.png";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -55,10 +62,10 @@ const Members = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const itemsPerPage = 3; // Number of members per page
+  // Dynamically set itemsPerPage based on screen size
+  const itemsPerPage = useBreakpointValue({ base: 1, md: 2, lg: 2, xl: 3 }) || 3;
   const totalPages = Math.ceil(member.length / itemsPerPage);
 
-  // Paginate data
   const paginatedMembers = member.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
@@ -79,138 +86,133 @@ const Members = () => {
   };
 
   return (
-    <>
-      <Flex
-        width={"100%"}
-        height={"100%"}
-        bgColor={"#FFFFFF"}
-        p="20px"
-        justifyContent="center"
-        alignItems="center"
-        direction="column"
-      >
-        <Flex my="30px">
-          <Text
-            fontFamily="Poppins"
-            fontSize="28px"
-            fontWeight={700}
-            color="#515151"
-          >
-            What Our Members Say
-          </Text>
-        </Flex>
-
-        <Flex
-          flexDirection={"row"}
-          flexWrap={"wrap"}
-          gap={"20px"}
-          justifyContent={"center"}
-          alignItems={"center"}
+    <Flex
+      width={"100%"}
+      height={"100%"}
+      bgColor={"#FFFFFF"}
+      p="20px"
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      my="50px"
+    >
+      <Flex mb="30px">
+        <Text
+          fontFamily="Poppins"
+          fontSize="28px"
+          fontWeight={700}
+          color="#515151"
         >
-          {paginatedMembers.map((item, index) => {
-            const isNextTwo =
-              index >= currentPage * itemsPerPage &&
-              index < (currentPage + 2) * itemsPerPage;
-            const animationOffset = isNextTwo
-              ? 0
-              : direction === 1
-              ? 300
-              : -300;
+          What Our Members Say
+        </Text>
+      </Flex>
 
-            return (
-              <MotionFlex
-                key={index}
-                initial={{ x: animationOffset, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: animationOffset * -1, opacity: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: isNextTwo ? 120 : 100,
-                  damping: isNextTwo ? 15 : 20,
-                }}
-                width={"360px"}
-                height={"340px"}
-                bgColor={"#F9E6E0"}
-                justifyContent={"space-between"}
+      <Flex
+        flexDirection={"row"}
+        flexWrap={"wrap"}
+        gap={"20px"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        {paginatedMembers.map((item, index) => {
+          const isNextTwo =
+            index >= currentPage * itemsPerPage &&
+            index < (currentPage + 2) * itemsPerPage;
+          const animationOffset = isNextTwo ? 0 : direction === 1 ? 300 : -300;
+
+          return (
+            <MotionFlex
+              key={index}
+              initial={{ x: animationOffset, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: animationOffset * -1, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: isNextTwo ? 120 : 100,
+                damping: isNextTwo ? 15 : 20,
+              }}
+              width={"340px"}
+              height={"340px"}
+              bgColor={"#F9E6E0"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              borderRadius={"8px"}
+              p={"15px"}
+              direction={"column"}
+            >
+              <Flex width={"100%"} height={"130px"}>
+                <Text
+                  textAlign={"center"}
+                  fontFamily={"Poppins"}
+                  fontSize={"16px"}
+                  fontWeight={500}
+                >
+                  {item.comment}
+                </Text>
+              </Flex>
+              <Flex
+                justifyContent={"center"}
                 alignItems={"center"}
-                borderRadius={"8px"}
-                p={"20px"}
                 direction={"column"}
+                gap={"10px"}
               >
-                <Flex width={"100%"} height={"130px"}>
+                <Flex justifyContent={"center"} alignItems={"center"}>
+                  <Box width={"50px"} height={"50px"}>
+                    <Image
+                      src={item.image}
+                      width={"100%"}
+                      height={"100%"}
+                      alt="members"
+                      objectFit={"cover"}
+                      borderRadius={"50%"}
+                    />
+                  </Box>
+                </Flex>
+                <Flex>
                   <Text
-                    textAlign={"center"}
                     fontFamily={"Poppins"}
-                    fontSize={"16px"}
+                    fontSize={"18px"}
                     fontWeight={500}
+                    color={"#515151"}
                   >
-                    {item.comment}
+                    {item.name}
                   </Text>
                 </Flex>
-                <Flex
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  direction={"column"}
-                  gap={"10px"}
-                >
-                  <Flex justifyContent={"center"} alignItems={"center"}>
-                    <Box width={"50px"} height={"50px"}>
-                      <Image
-                        src={item.image}
-                        width={"100%"}
-                        height={"100%"}
-                        alt="members"
-                        objectFit={"cover"}
-                        borderRadius={"50%"}
-                      />
-                    </Box>
-                  </Flex>
-                  <Flex>
-                    <Text
-                      fontFamily={"Poppins"}
-                      fontSize={"18px"}
-                      fontWeight={500}
-                      color={"#515151"}
-                    >
-                      {item.name}
-                    </Text>
-                  </Flex>
-                  <Flex>
-                    <Text
-                      fontFamily={"Poppins"}
-                      fontSize={"16px"}
-                      fontWeight={300}
-                      color={"#515151"}
-                    >
-                      {item.title}
-                    </Text>
-                  </Flex>
+                <Flex>
+                  <Text
+                    fontFamily={"Poppins"}
+                    fontSize={"16px"}
+                    fontWeight={300}
+                    color={"#515151"}
+                  >
+                    {item.title}
+                  </Text>
                 </Flex>
-              </MotionFlex>
-            );
-          })}
-        </Flex>
-
-        <Flex mt="20px" gap="30px" justifyContent="center">
-          <Button
-            onClick={handlePrev}
-            isDisabled={currentPage === 0}
-            bgColor="#FF3D00"
-            variant="none"
-          >
-            <FaArrowLeft color="white" />
-          </Button>
-          <Button
-            onClick={handleNext}
-            isDisabled={currentPage === totalPages - 1}
-            bgColor="#FF3D00"
-            variant="none"
-          >
-            <FaArrowRight color="white" />
-          </Button>
-        </Flex>
+              </Flex>
+            </MotionFlex>
+          );
+        })}
       </Flex>
-    </>
+
+      <Flex mt="60px" gap="30px" justifyContent="center">
+        <Button
+          onClick={handlePrev}
+          isDisabled={currentPage === 0}
+          bgColor="#FF3D00"
+          variant="none"
+        >
+          <FaArrowLeft color="white" />
+        </Button>
+        <Button
+          onClick={handleNext}
+          isDisabled={currentPage === totalPages - 1}
+          bgColor="#FF3D00"
+          variant="none"
+        >
+          <FaArrowRight color="white" />
+        </Button>
+      </Flex>
+    </Flex>
   );
 };
 

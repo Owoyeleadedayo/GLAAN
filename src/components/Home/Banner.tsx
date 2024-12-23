@@ -26,7 +26,7 @@ const Banner = () => {
         <Flex
           bgColor={"#000000"}
           width={"100%"}
-          height={{ base: "750px", md: "1000px", xl: "821px" }}
+          height={{ base: "750px", md: "1000px", xl: "700px" }}
           justifyContent={"center"}
           alignItems={"center"}
           direction={{
@@ -37,7 +37,7 @@ const Banner = () => {
           }}
           gap={{ base: 0, md: "10px", lg: "20px", xl: "20px" }}
           pt={{ base: 0, md: 0, lg: 0, xl: "80px" }}
-          zIndex={1000}
+          zIndex={1}
         >
           <MotionFlex
             initial={{ x: "-100%" }}
@@ -157,7 +157,7 @@ const Banner = () => {
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               viewport={{ once: true }}
-              pt={{ base: "120px", md: "120px", lg: "120px", xl: "200px" }}
+              pt={{ base: "40px", md: "70px", lg: "70px", xl: "80px" }}
             >
               <MotionBox
                 width={{
@@ -232,7 +232,7 @@ const Banner = () => {
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               viewport={{ once: true }}
-              pt={{ base: "120px", md: "120px", lg: "120px", xl: "200px" }}
+              pt={{ base: "40px", md: "70px", lg: "70px", xl: "80px" }}
             >
               <MotionBox
                 width={{

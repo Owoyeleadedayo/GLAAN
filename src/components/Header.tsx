@@ -34,21 +34,22 @@ const Header = () => {
         px={{ base: "20px", md: "40px", lg: "100px" }}
         justifyContent="space-between"
         alignItems="center"
-        position={'sticky'}
-        zIndex={100}
+        position={"sticky"}
+        top="0px"
+        zIndex={1000}
       >
         <Box
-          width={{ md: "140px", lg: "156px" }}
-          height={{ md: "38px", lg: "46px" }}
+          width={{ base: "96px", md: "140px", lg: "156px" }}
+          height={{ base: "28px", md: "38px", lg: "46px" }}
         >
-          <Image src={Logo} width="100%" height="100%" objectFit="cover" />
+          <Image src={Logo} width="100%" height="100%" objectFit="contain" />
         </Box>
 
         <IconButton
           display={{ base: "flex", md: "none" }}
           aria-label="Open menu"
           icon={<IoMenu />}
-          variant="outline"
+          variant="none"
           color="white"
           onClick={onOpen}
         />
@@ -112,7 +113,7 @@ const Header = () => {
                     key={index}
                     fontSize="18px"
                     cursor="pointer"
-                    onClick={onClose} // Close drawer on link click
+                    onClick={onClose}
                     _hover={{ color: "#FF3D00" }}
                   >
                     {item.name}

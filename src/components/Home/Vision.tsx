@@ -16,7 +16,8 @@ const Vision = () => {
   return (
     <>
       <Flex
-        pb={"30px"}
+        pt={{ base: "50px", md: "80px", lg: "80px", xl: "100px" }}
+        pb={"50px"}
         gap={{ base: "40px", md: "20px", lg: "20px", xl: "40px" }}
         direction={{ base: "column", md: "row", lg: "row", xl: "row" }}
         justifyContent={"center"}
