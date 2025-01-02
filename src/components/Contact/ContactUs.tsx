@@ -31,7 +31,7 @@ const ContactUs = () => {
             fontSize={"35px"}
             color={"#515151"}
           >
-            Become a member
+            Contact Us
           </Text>
           <Flex
             justifyContent={"center"}

@@ -45,8 +45,8 @@ const Header = () => {
         <Box
           width={{ base: "96px", md: "140px", lg: "156px" }}
           height={{ base: "28px", md: "38px", lg: "46px" }}
-          cursor={'pointer'}
-          onClick={() => navigate('/')}
+          cursor={"pointer"}
+          onClick={() => navigate("/")}
         >
           <Image src={Logo} width="100%" height="100%" objectFit="contain" />
         </Box>
@@ -94,6 +94,7 @@ const Header = () => {
             border: "1px solid #FF3D00",
           }}
           display={{ base: "none", md: "flex" }}
+          onClick={() => navigate("/community")}
         >
           Sign Up
         </Button>

@@ -4,8 +4,10 @@ import PP from "../../assets/Images/pro.png"
 import EDU from "../../assets/Images/educate.png";
 import Collab from "../../assets/Images/collab.png";
 import FIN from "../../assets/Images/financial.png";
+import { useNavigate } from "react-router-dom";
 
 const Programs = () => {
+  const navigate = useNavigate();
     const prog = [
       {
         Image: PP,
@@ -36,7 +38,7 @@ const Programs = () => {
         justifyContent={"center"}
         alignItems={"center"}
         pt={{ base: "30px", md: "50px", lg: "50px", xl: "50px" }}
-        pb={{base: "100px", }}
+        pb={{ base: "100px" }}
         direction={"column"}
         gap={{ base: "20px", md: "30px", lg: "35px", xl: "40px" }}
       >
@@ -132,7 +134,12 @@ const Programs = () => {
                     transform: "translateX(-50%)",
                   }}
                 >
-                  <Button variant={"none"} bg={"#FF3D00"} color={"#FFFFFF"}>
+                  <Button
+                    variant={"none"}
+                    bg={"#FF3D00"}
+                    color={"#FFFFFF"}
+                    onClick={() => navigate("/events")}
+                  >
                     Explore
                   </Button>
                 </motion.div>

@@ -204,8 +204,18 @@ const Banner = () => {
                 >
                   Which Cultural Group Do You Identify With?
                 </Text>
-                <Select>
-                    <option></option>
+                <Select
+                  bg={"#F2F2F2"}
+                  border={"1px solid #515151"}
+                  fontFamily={"Poppins"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#515151"}
+                >
+                  <option></option>
+                  <option value={"latin"}>Latin</option>
+                  <option value={"arabian"}>Arabian</option>
+                  <option value={"african"}>African</option>
                 </Select>
               </Flex>
               <Flex direction={"column"}>
@@ -228,7 +238,7 @@ const Banner = () => {
                 />
               </Flex>
               <Flex alignItems="center" gap="5px">
-                <Checkbox size="lg" />
+                <Checkbox size="md" />
                 <Text
                   fontFamily="Poppins"
                   fontWeight={400}

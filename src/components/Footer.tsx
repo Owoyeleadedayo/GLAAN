@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Input, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
 import Logo from "../assets/Images/glaanLogo.png";
 import { MdFacebook } from "react-icons/md";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -6,10 +6,11 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const linkItem = [
-    { name: "About Us" },
-    { name: "Programs" },
-    { name: "Events" },
-    { name: "Contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about-us" },
+    { name: "Events", href: "/events" },
+    { name: "Community", href: "/community" },
+    { name: "Contact", href: "/contact" },
   ];
   return (
     <>
@@ -52,7 +53,7 @@ const Footer = () => {
                 </Text>
               </Flex>
               {linkItem.map((item, index) => (
-                <Flex key={index} cursor={"pointer"}>
+                <Link key={index} href={item.href} cursor={"pointer"}>
                   <Text
                     fontFamily={"Poppins"}
                     fontSize={"14px"}
@@ -61,7 +62,7 @@ const Footer = () => {
                   >
                     {item.name}
                   </Text>
-                </Flex>
+                </Link>
               ))}
             </Flex>
           </Flex>
