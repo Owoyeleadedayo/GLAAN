@@ -136,6 +136,7 @@ const Header = () => {
                 color: "#FF3D00",
                 border: "1px solid #FF3D00",
               }}
+              onClick={() => navigate("/community")}
             >
               Sign Up
             </Button>
